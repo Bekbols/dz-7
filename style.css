@@ -1,0 +1,218 @@
+body.spring {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ab_plant_1649.jpg/1200px-Ab_plant_1649.jpg') no-repeat center center/cover;
+}
+
+body.summer {
+    background: url('https://mgazeta.com/attachments/5038d916aed6361224fdc3609f0c932d42416598/store/crop/0/0/1200/750/1600/0/0/cc69271782ef859a3f549d162c66196fcd2c2b3e3b1dffba40b6928af75d/9047978bebce89cc84514a53b26ed672.jpg') no-repeat center center/cover;
+}
+
+body.fall {
+    background: url('https://www.oka.fm/news2023/shzshrdpglnarpa680.jpg') no-repeat center center/cover;
+}
+
+body.winter {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Haanja_2010_01_1.jpg/1200px-Haanja_2010_01_1.jpg') no-repeat center center/cover;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background: #1f53e2;
+    min-height: 100vh;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s;
+}
+
+.calendar-container {
+    background: rgba(255, 255, 255, 0.76);
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-header .calendar-current-date {
+    font-weight: 500;
+    font-size: 1.45rem;
+    transition: color 0.5s;
+}
+
+.calendar-header.spring .calendar-current-date {
+    color: green;
+}
+
+.calendar-header.summer .calendar-current-date {
+    color: orange;
+}
+
+.calendar-header.fall .calendar-current-date {
+    color: brown;
+}
+
+.calendar-header.winter .calendar-current-date {
+    color: blue;
+}
+
+.calendar-container header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .calendar-navigation {
+    display: flex;
+}
+
+header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+    color: #aeabab;
+    font-size: 1.9rem;
+}
+
+.calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+header .calendar-navigation span:hover {
+    background: #f2f2f2;
+}
+
+.time {
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.calendar-body {
+    padding: 20px;
+}
+
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+.calendar-body .calendar-dates {
+    margin-bottom: 20px;
+}
+
+.calendar-body li {
+    width: calc(100% / 7);
+    font-size: 1.10rem;
+    color: #000000;
+}
+
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar-body .calendar-dates li {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calendar-dates li.inactive {
+    color: #aaa;
+}
+
+.calendar-dates li.active {
+    color: #ffffff;
+}
+
+.calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-dates li.active::before {
+    background: #5228c0;
+}
+
+.calendar-dates li:not(.active):hover::before {
+    background: #e4e1e1;
+}
+
+.calendar-dates li.weekend {
+    color: red;
+}
+
+.dropbtn {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 17px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 91px;
+}
+
+
+.dropdown-content button {
+    color: #000000;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content button:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #2980B9;
+}
+
+#lang-en, #lang-kg, #lang-ru {
+    background-color: rgb(4, 8, 10);
+    color: white;
+    width: 105px;
+    max-height: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#lang-en:hover, #lang-kg:hover {
+    background-color: blue;
+}
